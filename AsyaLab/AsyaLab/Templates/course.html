@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+{% load static %}
+<head>
+    <meta charset="UTF-8">
+    <title>Innoclass</title>
+    <link rel="stylesheet" href="{% static 'css/style.css'%}">
+    <h1>Приветствуем Вас в Innoclass!</h1>
+            <div class="button-logout">
+            <a href="{% url 'logout' %}"><button class="button_logout">Выйти</button></a>
+            </div>
+</head>
+<body>
+<div class="header">
+    <img width="180px" src="{% static 'logo-asyaLab.png' %}">
+</div>
+<div class="container-curces">
+     {% for curces in curces %}
+    <h1>{{curces.title}}<br></h1>
+    {{curces.description}}
+    {% endfor %}
+{% for lesson in lesson %}
+    <div class="lesson-title">{{lesson.title}}</div>
+<!--    {% for material in material %}-->
+<!--    {{material.text}}<br>-->
+<!--    {{material.link}}-->
+<!--{% endfor %}-->
+{% endfor %}
+</div>
+<br>
+
+</body>
+</html>
